@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @baby.name %>
+</p>
+
+<p>
+  <strong>Times breastfeeded today:</strong>
+  <%= @baby.times_breastfeeded_today %>
+</p>
+
+<p>
+  <strong>Last breastfeeded</strong>
+  <%= @baby.last_breastfeeded.strftime('%d/%m/%Y %H:%M') rescue '-' %>
+</p>
+
+<p>
+  <strong>Time breastfeeding today</strong>
+  <%= @baby.breastfeeding_time_today %>
+</p>
+
+<p>
+  <strong>Quantity breastfeeding today</strong>
+  <%= @baby.breastfeeding_quantity_today %>
+</p>
+
+<%= link_to 'Edit', edit_baby_path(@baby) %> |
+<%= link_to 'Back', babies_path %>

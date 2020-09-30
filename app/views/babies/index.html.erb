@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Babies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Times breastfeeded</th>
+      <th>Total breastfeeding time</th>
+      <th>Total breastfeeding quantity</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @babies.each do |baby| %>
+      <tr>
+        <td><%= baby.name %></td>
+        <td><%= baby.breastfeedings.count %></td>
+        <td><%= baby.total_breastfeeding_time %></td>
+        <td><%= baby.total_breastfeeding_quantity %></td>
+        <td><%= link_to 'Breastfeedings', breastfeedings_url(baby_id: baby.id) %></td>
+        <td><%= link_to 'Show', baby %></td>
+        <td><%= link_to 'Edit', edit_baby_path(baby) %></td>
+        <td><%= link_to 'Destroy', baby, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Baby', new_baby_path %> |
+<%= link_to 'Breastfeedings', breastfeedings_path %>

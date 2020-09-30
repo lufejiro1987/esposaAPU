@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Baby:</strong>
+  <%= link_to @breastfeeding.baby.name, baby_path(@breastfeeding.baby.id) %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @breastfeeding.time %> minutes
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @breastfeeding.quantity %> milliliters
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @breastfeeding.created_at.strftime('%d/%m/%Y %H:%M') %>
+</p>
+
+<%= link_to 'Edit', edit_breastfeeding_path(@breastfeeding) %> |
+<%= link_to 'Back', breastfeedings_path %>
